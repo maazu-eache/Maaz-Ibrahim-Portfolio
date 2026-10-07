@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { personalData, skillsData, projectsData, languagesData } from '../data/portfolioData';
+import { personalData, coreExpertiseData, projectsData, languagesData, educationData } from '../data/portfolioData';
 import { 
   X, 
   Download, 
   Printer, 
   FileText, 
-  ExternalLink
+  GraduationCap
 } from 'lucide-react';
 
 export default function ResumeModal({ onClose }) {
@@ -37,7 +37,7 @@ export default function ResumeModal({ onClose }) {
         <div className="modal-header resume-header-bar">
           <div className="resume-header-title">
             <FileText size={18} className="text-primary" />
-            <h3 className="modal-title">Maaz Ibrahim — Official Resume</h3>
+            <h3 className="modal-title">Maaz Ibrahim — Resume</h3>
           </div>
 
           <div className="resume-control-actions">
@@ -145,20 +145,31 @@ export default function ResumeModal({ onClose }) {
 
               {/* Two Column Layout */}
               <div className="doc-grid-cols">
-                {/* Left Column: Skills & Languages */}
+                {/* Left Column: Core Expertise, Education, Languages */}
                 <div className="doc-col-left">
                   <div className="doc-block">
-                    <h3 className="doc-block-title">SKILLS</h3>
+                    <h3 className="doc-block-title">CORE EXPERTISE</h3>
                     <div className="doc-skills-group">
-                      {skillsData.map((cat, idx) => (
+                      {coreExpertiseData.map((cat, idx) => (
                         <div key={idx} className="doc-skill-unit">
                           <h4 className="doc-skill-cat">{cat.category}</h4>
                           <p className="doc-skill-names">
-                            {cat.skills.map((s) => s.name).join(', ')}
+                            {cat.skills.join(', ')}
                           </p>
                         </div>
                       ))}
                     </div>
+                  </div>
+
+                  <div className="doc-block">
+                    <h3 className="doc-block-title">EDUCATION</h3>
+                    {educationData.map((edu, idx) => (
+                      <div key={idx} className="doc-edu-unit">
+                        <div className="doc-edu-degree">{edu.degree}</div>
+                        <div className="doc-edu-school">{edu.institution}, {edu.location}</div>
+                        <div className="doc-edu-year">{edu.period}</div>
+                      </div>
+                    ))}
                   </div>
 
                   <div className="doc-block">
@@ -177,14 +188,15 @@ export default function ResumeModal({ onClose }) {
                 {/* Right Column: Projects */}
                 <div className="doc-col-right">
                   <div className="doc-block">
-                    <h3 className="doc-block-title">PROJECTS</h3>
+                    <h3 className="doc-block-title">FEATURED PROJECTS</h3>
                     <div className="doc-projects-group">
                       {projectsData.map((proj) => (
                         <div key={proj.id} className="doc-proj-unit">
                           <div className="doc-proj-header-line">
                             <span className="doc-proj-name">{proj.title}</span>
-                            <span className="doc-proj-time">({proj.duration})</span>
+                            <span className="doc-proj-time">— {proj.subtitle}</span>
                           </div>
+                          <div className="doc-proj-tagline">{proj.tagline}</div>
                           <div className="doc-proj-tech">
                             <strong>Tech Stack:</strong> {proj.techStack.join(', ')}
                           </div>

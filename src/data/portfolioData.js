@@ -1,214 +1,211 @@
 export const personalData = {
   name: "Maaz Ibrahim",
-  role: "Full Stack Developer",
+  role: "Full Stack & React Native Developer",
+  shortHeroPitch: "Building scalable web and mobile applications with MERN Stack and React Native — from intuitive interfaces and REST APIs to authentication, payments, and production-ready solutions.",
   status: "Available for Hire & Projects",
   company: {
     name: "SAFPRO Technology Solutions",
     url: "https://www.safprotech.com",
     role: "Full Stack Developer",
     period: "2023 - Present",
-    description: "Developing scalable, high-performance web and mobile applications with React, React Native, Node.js, and MongoDB, delivering client-facing digital platforms."
+    description: "Developing scalable, high-performance web and mobile applications with MERN stack and React Native, delivering production-ready client platforms."
   },
-  bio: "React developer with 3+ years of experience building scalable, responsive web applications with clean, efficient code and a strong focus on user experience.",
-  email: "maaz.ibrahim.dev@gmail.com",
+  bio: "Full Stack Developer with 2+ years of experience building scalable web and mobile applications using the MERN stack (MongoDB, Express.js, React.js, Node.js) and React Native. Experienced in developing responsive interfaces, RESTful APIs, authentication, role-based access control, payment integrations, and production-ready applications for web, iOS, and Android.",
+  aboutParagraphs: [
+    "I specialize in building modern web and mobile applications from frontend to backend. My experience includes developing responsive React applications, cross-platform React Native apps, Node.js APIs, MongoDB databases, authentication systems, payment workflows, and role-based platforms.",
+    "I focus on writing clean, maintainable code, creating intuitive user experiences, solving complex technical issues, and delivering reliable applications that are ready for real-world use."
+  ],
+  email: "maazibrahimoo0@gmail.com",
   location: "India / Remote",
   resumeUrl: "/Maaz_Resume.pdf",
   stats: [
-    { label: "Years Experience", value: "3+", icon: "Briefcase" },
-    { label: "Production Projects", value: "4+", icon: "Layers" },
-    { label: "Core Technologies", value: "15+", icon: "Code" },
-    { label: "Spoken Languages", value: "4", icon: "Globe" }
+    { label: "Years Experience", value: "2+", icon: "Briefcase" },
+    { label: "Featured Projects", value: "5", icon: "Layers" },
+    { label: "Platforms", value: "Web, iOS & Android", icon: "Smartphone" },
+    { label: "Published Apps", value: "Google Play", icon: "Play" }
   ]
 };
 
-export const skillsData = [
+export const educationData = [
   {
-    category: "Full-Stack Development",
-    icon: "Layers",
+    degree: "B.Sc. Computer Science",
+    institution: "Islamiah College (Autonomous)",
+    location: "Vaniyambadi",
+    period: "2020 – 2023",
+    description: "Core foundation in algorithms, data structures, software engineering, database management, and computer programming."
+  }
+];
+
+export const coreExpertiseData = [
+  {
+    category: "Frontend",
+    icon: "Layout",
     color: "#2563eb",
-    description: "End-to-end web & mobile architecture with modern JavaScript ecosystems.",
-    skills: [
-      { name: "React", level: 95, highlight: true },
-      { name: "React Native", level: 90, highlight: true },
-      { name: "Node.js", level: 92, highlight: true },
-      { name: "Express.js", level: 90, highlight: false },
-      { name: "Component-Based Architecture", level: 96, highlight: false },
-      { name: "REST APIs", level: 94, highlight: false }
-    ]
+    skills: ["React.js", "React Native", "JavaScript", "HTML5", "CSS3", "Bootstrap"]
   },
   {
-    category: "UI & Styling",
-    icon: "Palette",
-    color: "#0891b2",
-    description: "Crafting pixel-perfect, responsive, and accessible user interfaces.",
-    skills: [
-      { name: "HTML5", level: 98, highlight: false },
-      { name: "CSS3 / Modern CSS", level: 95, highlight: true },
-      { name: "Bootstrap", level: 92, highlight: false },
-      { name: "Responsive Design", level: 96, highlight: true }
-    ]
+    category: "Backend",
+    icon: "Server",
+    color: "#4f46e5",
+    skills: ["Node.js", "Express.js", "REST APIs"]
   },
   {
-    category: "State, Logic & Data Handling",
-    icon: "Cpu",
-    color: "#7c3aed",
-    description: "Predictable application data flow and client-server synchronization.",
-    skills: [
-      { name: "State Management", level: 94, highlight: true },
-      { name: "API Integration", level: 95, highlight: true },
-      { name: "Form Handling", level: 92, highlight: false },
-      { name: "Client-Side Validation", level: 92, highlight: false }
-    ]
-  },
-  {
-    category: "Backend & Database",
+    category: "Database",
     icon: "Database",
     color: "#059669",
-    description: "Performant server-side logic, data persistence, and indexing.",
-    skills: [
-      { name: "Server-Side Logic", level: 92, highlight: true },
-      { name: "MongoDB", level: 90, highlight: true },
-      { name: "Schema Design", level: 88, highlight: false },
-      { name: "CRUD Operations", level: 95, highlight: false }
-    ]
+    skills: ["MongoDB", "MySQL"]
   },
   {
-    category: "Authentication & Authorization",
+    category: "Mobile",
+    icon: "Smartphone",
+    color: "#0891b2",
+    skills: ["React Native", "iOS", "Android"]
+  },
+  {
+    category: "Authentication",
     icon: "ShieldCheck",
     color: "#d97706",
-    description: "Enterprise security standards, session control, and granular permission tiers.",
-    skills: [
-      { name: "JWT-based Authentication", level: 94, highlight: true },
-      { name: "Role-Based Access Control (RBAC)", level: 92, highlight: true }
-    ]
+    skills: ["JWT", "Role-Based Access Control (RBAC)"]
   },
   {
-    category: "Payment Flow Integration",
+    category: "Payments",
     icon: "CreditCard",
     color: "#e11d48",
-    description: "Fintech workflows with multi-currency gateways and automated status hooks.",
-    skills: [
-      { name: "PayPal & Stripe Integration", level: 92, highlight: true },
-      { name: "Payment Status Handling", level: 90, highlight: true }
-    ]
+    skills: ["Stripe", "PayPal", "Razorpay"]
   },
   {
-    category: "Other Skills",
-    icon: "Sparkles",
-    color: "#4f46e5",
-    description: "Engineering rigor, problem solving, and production-grade maintenance.",
-    skills: [
-      { name: "Problem Solving", level: 95, highlight: true },
-      { name: "Debugging", level: 94, highlight: true },
-      { name: "Performance Optimization", level: 92, highlight: true },
-      { name: "Clean Code Practices", level: 96, highlight: false }
-    ]
+    category: "Tools",
+    icon: "Wrench",
+    color: "#7c3aed",
+    skills: ["Git", "GitHub", "Postman", "Firebase"]
   }
 ];
 
 export const projectsData = [
   {
     id: "telework-bridge",
-    title: "Telework Bridge",
-    subtitle: "Freelancer & Client Platform",
-    duration: "Ongoing 1.2-years Project",
-    category: "Full Stack",
-    tagline: "Scalable marketplace bridging freelancers and clients with role-based flows and secure payment processing.",
-    techStack: ["React", "Bootstrap", "Node.js", "MongoDB", "PayPal & Stripe"],
+    title: "TeleworkBridge",
+    subtitle: "Freelance Marketplace",
+    category: "Web & Full Stack",
+    tagline: "Freelance platform connecting clients and freelancers with role-based workflows, payment integration, and REST APIs.",
+    techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "Stripe", "PayPal", "Bootstrap"],
     highlights: [
-      "Built a simple and responsive platform for freelancers and clients.",
-      "Created reusable React components and role-based user flows.",
-      "Developed backend APIs using Node.js with MongoDB for data storage.",
-      "Integrated payment flows with clear status and user feedback."
+      "Built a responsive platform for freelancers and clients with clean component-driven architecture.",
+      "Created reusable React components and role-based user navigation flows.",
+      "Developed backend REST APIs using Node.js & Express with MongoDB for scalable data storage.",
+      "Integrated secure multi-gateway payment flows (Stripe & PayPal) with transaction status feedback."
     ],
     architecture: {
-      frontend: "React with modular reusable component hierarchy, responsive Bootstrap styling, and client-side form validations.",
-      backend: "Node.js & Express RESTful services managing user profiles, contracts, and job milestones.",
+      frontend: "React.js with modular component hierarchy, custom responsive styling, and role-based view routing.",
+      backend: "Node.js & Express RESTful services managing user profiles, contracts, and milestone agreements.",
       database: "MongoDB collections structuring users, job listings, contracts, and payment transactions.",
-      security: "Role-based access control separating client and freelancer capabilities with JWT session tokens."
+      security: "JWT authentication with strict permission boundaries separating client and freelancer capabilities."
     },
     metrics: [
-      { label: "Project Timeline", value: "1.2+ Years" },
-      { label: "Core Architecture", value: "REST API + React" },
-      { label: "Payments", value: "PayPal & Stripe" }
+      { label: "Type", value: "Marketplace" },
+      { label: "Architecture", value: "MERN Stack" },
+      { label: "Payments", value: "Stripe & PayPal" }
     ]
   },
   {
     id: "xlim-connect",
-    title: "XLIM-CONNECT",
-    subtitle: "Enterprise Order, User & Inventory Management",
-    duration: "Ongoing 1-year Project",
+    title: "Xlim-Connect",
+    subtitle: "Order & Inventory Management",
     category: "Enterprise",
-    tagline: "Operational management platform for high-volume orders, user permission governance, and inventory tracking.",
-    techStack: ["React", "Bootstrap", "Node.js", "MongoDB", "RBAC"],
+    tagline: "Management platform for orders, users, and inventory with role-based access and backend API integration.",
+    techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "RBAC", "Bootstrap"],
     highlights: [
       "Built a responsive application for order, user, and inventory management.",
-      "Created reusable React components with simple and clean state handling.",
-      "Developed backend APIs using Node.js and MongoDB.",
-      "Implemented role-based access to control features and views."
+      "Created reusable React components with clean, predictable state handling.",
+      "Developed backend APIs using Node.js and MongoDB for batch order and stock tracking.",
+      "Implemented role-based access (RBAC) to strictly control features and sensitive views."
     ],
     architecture: {
-      frontend: "Fast reactive React dashboards with responsive data tables, clean state management, and real-time updates.",
-      backend: "Scalable Node.js API endpoints handling inventory mutations and batch order processing.",
-      database: "Structured MongoDB schemas with indexing for fast lookups across inventory catalogs.",
-      security: "Granular Role-Based Access Control (RBAC) governing views for administrators, managers, and staff."
+      frontend: "Reactive React dashboards with data grids, instant stock updates, and interactive filters.",
+      backend: "High-throughput Node.js API endpoints handling inventory mutations and order workflows.",
+      database: "MongoDB schema design optimized for rapid catalog indexing and warehouse tracking.",
+      security: "Granular Role-Based Access Control (RBAC) governing admin, warehouse, and operational tiers."
     },
     metrics: [
-      { label: "Project Duration", value: "1 Year" },
-      { label: "Domain", value: "Supply & Inventory" },
+      { label: "Type", value: "Enterprise ERP" },
+      { label: "Focus", value: "Order & Stock" },
       { label: "Security", value: "Granular RBAC" }
     ]
   },
   {
     id: "mommas-kitchen",
-    title: "MOMMAS KITCHEN",
-    subtitle: "Food Ordering & Service Platform",
-    duration: "Ongoing 10-months Project",
-    category: "Mobile & Web",
-    tagline: "Cross-platform web and mobile application for seamless food ordering with focus on stability and high performance.",
-    techStack: ["React", "React Native", "Node.js", "MongoDB"],
+    title: "Momma's Kitchen",
+    subtitle: "Food Ordering Platform",
+    category: "Web & Mobile",
+    tagline: "Web and mobile food platform developed with React.js and React Native, including ongoing optimization, bug fixing, and backend integration.",
+    techStack: ["React.js", "React Native", "Node.js", "Express.js", "MongoDB"],
     highlights: [
-      "Resolved UI and functional issues across web and mobile through effective problem-solving.",
-      "Fixed bugs and improved component logic and state handling.",
-      "Refactored existing React components to improve stability and performance.",
+      "Developed cross-platform food ordering interfaces across web (React) and mobile (React Native).",
+      "Resolved UI and functional issues across web and mobile through effective debugging and problem-solving.",
+      "Refactored existing React components to improve stability, rendering performance, and state flow.",
       "Supported backend fixes and data handling using Node.js and MongoDB."
     ],
     architecture: {
-      frontend: "Shared core component logic across React web app and React Native mobile application.",
-      backend: "Node.js order processing backend connecting customer requests with status tracking.",
-      database: "MongoDB collections structuring dynamic menus, customer accounts, and order history.",
-      performance: "Component refactoring eliminating redundant re-renders and improving app stability."
+      frontend: "Shared component and business logic across React web app and React Native mobile application.",
+      backend: "Node.js & Express order management pipeline connecting customers, kitchens, and deliveries.",
+      database: "MongoDB dynamic menu collections, customer preference documents, and real-time order receipts.",
+      performance: "Rigorous component refactoring eliminating redundant re-renders and improving mobile fluidity."
     },
     metrics: [
-      { label: "Project Duration", value: "10 Months" },
       { label: "Platforms", value: "Web & Mobile" },
-      { label: "Focus", value: "Refactoring & Performance" }
+      { label: "Stack", value: "React + React Native" },
+      { label: "Focus", value: "Optimization & APIs" }
     ]
   },
   {
-    id: "jewel-app-aurum",
-    title: "JEWEL APP (AURUM)",
-    subtitle: "Chit Plans & Merchant Management",
-    duration: "Ongoing 4-months Project",
-    category: "Fintech",
-    tagline: "Merchant and customer platform for creating, managing, and subscribing to monthly jewelry chit schemes.",
-    techStack: ["React", "Bootstrap", "React Native", "Node.js", "MongoDB"],
+    id: "dkgold",
+    title: "DKGold",
+    subtitle: "Jewelry Management & Chit Platform",
+    category: "Fintech & Mobile",
+    tagline: "Web and mobile platform featuring merchant management, chit plans, subscriptions, payments, and role-based access.",
+    techStack: ["React.js", "React Native", "Node.js", "MongoDB", "Bootstrap", "Payment Gateways"],
     highlights: [
-      "Developed a merchant and user management application for web and mobile.",
-      "Enabled merchants to create and manage chit plans.",
-      "Built user flows for browsing, selecting, and subscribing to monthly chit plans.",
-      "Implemented role-based access and views for merchants and users."
+      "Developed an end-to-end merchant and user management platform for web and mobile.",
+      "Enabled jewelry merchants to configure, monitor, and manage monthly chit investment schemes.",
+      "Built seamless user flows for browsing, selecting, and subscribing to monthly chit plans.",
+      "Implemented role-based access and views ensuring privacy for merchants and clarity for customers."
     ],
     architecture: {
-      frontend: "Responsive customer subscription flow, plan browsing wizard, and merchant administrative console.",
-      backend: "Node.js financial logic processing monthly chit plan installments and maturity terms.",
-      database: "MongoDB database structuring merchants, subscribers, and transaction records.",
-      security: "Distinct role-based access ensuring merchant operational privacy while facilitating user self-service."
+      frontend: "Multi-step subscription wizard, investment calculator, and mobile-friendly merchant dashboards.",
+      backend: "Node.js financial calculation engine computing installment cycles, maturity bonuses, and payout triggers.",
+      database: "MongoDB schemas structuring merchant ledgers, customer enrollments, and recurring payments.",
+      security: "Distinct role-based security preserving merchant confidentiality while enabling customer self-service."
     },
     metrics: [
-      { label: "Project Duration", value: "4 Months" },
-      { label: "Domain", value: "Jewelry / Chit Plans" },
-      { label: "Platforms", value: "Web + React Native" }
+      { label: "Type", value: "Jewelry Fintech" },
+      { label: "Platforms", value: "Web + React Native" },
+      { label: "Core Feature", value: "Chit Plan Subscriptions" }
+    ]
+  },
+  {
+    id: "scoreverse",
+    title: "ScoreVerse",
+    subtitle: "Sports & Turf Management Platform",
+    category: "Mobile (Published)",
+    badge: "Published on Google Play",
+    tagline: "React Native sports platform for turf booking, live scoring, tournaments, teams, fixtures, and player statistics, published on Google Play.",
+    techStack: ["React Native", "iOS & Android", "Node.js", "Express.js", "MongoDB", "MySQL", "Google Play"],
+    highlights: [
+      "Engineered a comprehensive sports platform with turf booking, real-time match scoring, and tournament management.",
+      "Built native mobile user flows for creating teams, scheduling fixtures, and viewing live player statistics.",
+      "Implemented reliable backend integrations for booking slots, match status tracking, and player stats calculation.",
+      "Successfully deployed and published the production application on the Google Play Store."
+    ],
+    architecture: {
+      frontend: "High-performance React Native mobile architecture with smooth screen transitions, tournament trees, and live scoreboards.",
+      backend: "Node.js & Express RESTful services orchestrating real-time score updates, slot bookings, and team rosters.",
+      database: "Optimized database layer handling tournament fixtures, player career metrics, and turf scheduling.",
+      deployment: "Production release on Google Play Store adhering to Android guidelines, app signing, and release pipelines."
+    },
+    metrics: [
+      { label: "Store", value: "Google Play" },
+      { label: "Platform", value: "React Native (iOS & Android)" },
+      { label: "Key Features", value: "Turf Booking & Live Scoring" }
     ]
   }
 ];

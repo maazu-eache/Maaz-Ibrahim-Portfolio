@@ -1,27 +1,29 @@
 import React from 'react';
-import { skillsData } from '../data/portfolioData';
+import { coreExpertiseData } from '../data/portfolioData';
 import { 
   Code2, 
-  Layers, 
-  Palette, 
-  Cpu, 
+  Layout, 
+  Server, 
   Database, 
+  Smartphone, 
   ShieldCheck, 
   CreditCard, 
-  Sparkles,
-  Terminal
+  Wrench,
+  Terminal,
+  CheckCircle2
 } from 'lucide-react';
 
 export default function Skills() {
-  const getCategoryIcon = (iconName) => {
-    switch (iconName) {
-      case 'Layers': return <Layers size={18} />;
-      case 'Palette': return <Palette size={18} />;
-      case 'Cpu': return <Cpu size={18} />;
-      case 'Database': return <Database size={18} />;
-      case 'ShieldCheck': return <ShieldCheck size={18} />;
-      case 'CreditCard': return <CreditCard size={18} />;
-      default: return <Sparkles size={18} />;
+  const getCategoryIcon = (category) => {
+    switch (category) {
+      case 'Frontend': return <Layout size={20} />;
+      case 'Backend': return <Server size={20} />;
+      case 'Database': return <Database size={20} />;
+      case 'Mobile': return <Smartphone size={20} />;
+      case 'Authentication': return <ShieldCheck size={20} />;
+      case 'Payments': return <CreditCard size={20} />;
+      case 'Tools': return <Wrench size={20} />;
+      default: return <Code2 size={20} />;
     }
   };
 
@@ -32,76 +34,61 @@ export default function Skills() {
         <div className="section-header">
           <div className="section-badge">
             <Code2 size={14} />
-            <span>Technical Proficiencies</span>
+            <span>Technical Mastery</span>
           </div>
           <h2 className="section-title">
-            Skills & <span className="text-gradient">Core Competencies</span>
+            Core <span className="text-gradient">Expertise</span>
           </h2>
           <p className="section-subtitle">
-            Structured full-stack skills from Maaz's resume honed over 3+ years of building production web applications, backend APIs, and authentication flows.
+            Specialized skill set spanning the modern MERN stack, cross-platform mobile app development with React Native, secure APIs, and payment integrations.
           </p>
         </div>
 
-        {/* Skills Categories Grid */}
-        <div className="skills-grid-clean">
-          {skillsData.map((cat, idx) => (
-            <div key={idx} className="skill-card-clean pro-card">
-              {/* Category Header */}
-              <div className="skill-cat-head">
-                <div className="skill-icon-wrap" style={{ color: cat.color, backgroundColor: `${cat.color}12` }}>
-                  {getCategoryIcon(cat.icon)}
+        {/* Core Expertise Categories Grid */}
+        <div className="expertise-grid">
+          {coreExpertiseData.map((item, idx) => (
+            <div key={idx} className="expertise-card pro-card">
+              <div className="expertise-card-head">
+                <div 
+                  className="expertise-icon-box"
+                  style={{ color: item.color, backgroundColor: `${item.color}12` }}
+                >
+                  {getCategoryIcon(item.category)}
                 </div>
-                <div className="skill-cat-info">
-                  <h3 className="skill-cat-title">{cat.category}</h3>
-                  <span className="skill-items-count">{cat.skills.length} competencies</span>
+                <div>
+                  <h3 className="expertise-cat-title">{item.category}</h3>
+                  <span className="expertise-items-count">{item.skills.length} technologies</span>
                 </div>
               </div>
 
-              <p className="skill-cat-desc">{cat.description}</p>
-
-              {/* Skills List with Progress */}
-              <div className="skills-list-wrap">
-                {cat.skills.map((skill, sIdx) => (
-                  <div key={sIdx} className="skill-row-item">
-                    <div className="skill-meta-bar">
-                      <span className="skill-text-label">
-                        {skill.highlight && <span className="highlight-bullet" style={{ backgroundColor: cat.color }}></span>}
-                        {skill.name}
-                      </span>
-                      <span className="skill-pct-num">{skill.level}%</span>
-                    </div>
-
-                    <div className="skill-bar-track">
-                      <div 
-                        className="skill-bar-fill"
-                        style={{ 
-                          width: `${skill.level}%`,
-                          backgroundColor: cat.color 
-                        }}
-                      ></div>
-                    </div>
-                  </div>
+              <div className="expertise-skills-pills">
+                {item.skills.map((skill, sIdx) => (
+                  <span key={sIdx} className="expertise-pill">
+                    <CheckCircle2 size={13} style={{ color: item.color }} />
+                    <span>{skill}</span>
+                  </span>
                 ))}
               </div>
             </div>
           ))}
         </div>
 
-        {/* Engineering Rigor Banner */}
+        {/* Rigor & Architecture Philosophy Banner */}
         <div className="clean-philosophy-banner pro-card">
           <div className="philosophy-icon-box">
             <Terminal size={22} />
           </div>
           <div className="philosophy-text-box">
-            <h4 className="philosophy-heading">Clean Code & Architecture Philosophy</h4>
+            <h4 className="philosophy-heading">Full Stack & Mobile Development Standard</h4>
             <p className="philosophy-quote">
-              "Writing clean, modular, and maintainable code with reusable component structures, responsive layouts, robust error handling, and high-performance server logic."
+              "Focusing on clean, maintainable code, creating intuitive user experiences, solving complex technical issues, and delivering reliable applications that are ready for real-world use."
             </p>
           </div>
           <div className="philosophy-chips">
-            <span className="tech-tag blue">Component Reusability</span>
-            <span className="tech-tag emerald">Clean State Logic</span>
-            <span className="tech-tag purple">REST Security</span>
+            <span className="tech-tag blue">MERN Stack</span>
+            <span className="tech-tag blue">React Native</span>
+            <span className="tech-tag emerald">REST APIs</span>
+            <span className="tech-tag purple">Payment Flows</span>
           </div>
         </div>
       </div>

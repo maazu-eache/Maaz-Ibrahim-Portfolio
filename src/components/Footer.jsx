@@ -54,21 +54,11 @@ export default function Footer({ onOpenResume }) {
 
         <div className="footer-bottom-info">
           <p className="footer-copyright">
-            © {new Date().getFullYear()} {personalData.name}. All rights reserved. Currently building at{' '}
-            <a 
-              href={personalData.company.url} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="footer-company-link"
-            >
-              {personalData.company.name} <ExternalLink size={11} />
-            </a>
+            © {new Date().getFullYear()} {personalData.name}. All rights reserved.
+            
           </p>
 
-          <div className="footer-tech-stack-tag">
-            <Code2 size={13} className="text-primary" />
-            <span>Built with React & Vite</span>
-          </div>
+          
         </div>
       </div>
     </footer>

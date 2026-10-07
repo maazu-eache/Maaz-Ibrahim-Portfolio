@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { personalData } from '../data/portfolioData';
-import { FileText, Menu, X, Download } from 'lucide-react';
+import { FileText, Menu, X } from 'lucide-react';
 
 export default function Navbar({ onOpenResume }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -11,7 +11,7 @@ export default function Navbar({ onOpenResume }) {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 15);
 
-      const sections = ['hero', 'experience', 'projects', 'skills', 'languages', 'contact'];
+      const sections = ['hero', 'about', 'projects', 'skills', 'experience', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -32,11 +32,10 @@ export default function Navbar({ onOpenResume }) {
   }, []);
 
   const navLinks = [
-    { label: 'About', href: '#hero', id: 'hero' },
-    { label: 'Experience', href: '#experience', id: 'experience' },
+    { label: 'About', href: '#about', id: 'about' },
     { label: 'Projects', href: '#projects', id: 'projects' },
-    { label: 'Skills', href: '#skills', id: 'skills' },
-    { label: 'Languages', href: '#languages', id: 'languages' },
+    { label: 'Expertise', href: '#skills', id: 'skills' },
+    { label: 'Experience', href: '#experience', id: 'experience' },
     { label: 'Contact', href: '#contact', id: 'contact' },
   ];
 
@@ -50,7 +49,7 @@ export default function Navbar({ onOpenResume }) {
           </div>
           <div className="logo-text-group">
             <span className="logo-name">{personalData.name}</span>
-            <span className="logo-sub">Full Stack Developer</span>
+            <span className="logo-sub">{personalData.role}</span>
           </div>
         </a>
 

@@ -4,17 +4,17 @@ import ProjectModal from './ProjectModal';
 import { 
   FolderGit2, 
   ArrowUpRight, 
-  Clock, 
   CheckCircle2, 
-  Layers,
-  Code
+  Smartphone,
+  Globe,
+  Sparkles
 } from 'lucide-react';
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const categories = ['All', 'Full Stack', 'Enterprise', 'Mobile & Web', 'Fintech'];
+  const categories = ['All', 'Full Stack', 'Web & Mobile', 'Enterprise', 'Fintech', 'Mobile (Published)'];
 
   const filteredProjects = activeCategory === 'All' 
     ? projectsData 
@@ -27,13 +27,13 @@ export default function Projects() {
         <div className="section-header">
           <div className="section-badge">
             <FolderGit2 size={14} />
-            <span>Case Studies</span>
+            <span>Portfolio Work</span>
           </div>
           <h2 className="section-title">
             Featured <span className="text-gradient">Projects</span>
           </h2>
           <p className="section-subtitle">
-            Production web and mobile platforms engineered with clean code, scalable architecture, role-based workflows, and secure payment integrations.
+            Scalable web and mobile applications built with the MERN stack and React Native, featuring intuitive user flows, RESTful APIs, role-based security, and payment integrations.
           </p>
 
           {/* Category Filter Tabs */}
@@ -53,22 +53,23 @@ export default function Projects() {
           </div>
         </div>
 
-        {/* Projects Grid without images - Clean, Executive Cards */}
+        {/* Clean Project Cards Grid */}
         <div className="projects-grid-clean">
           {filteredProjects.map((project) => (
             <div 
               key={project.id} 
-              className="clean-project-card pro-card"
+              className={`clean-project-card pro-card ${project.badge ? 'highlighted-project-card' : ''}`}
               onClick={() => setSelectedProject(project)}
             >
               {/* Card Top Meta */}
               <div className="project-top-row">
                 <div className="project-badges">
                   <span className="project-cat-pill">{project.category}</span>
-                  <span className="project-duration-pill">
-                    <Clock size={12} />
-                    <span>{project.duration}</span>
-                  </span>
+                  {project.badge && (
+                    <span className="project-special-badge">
+                      <Sparkles size={12} /> {project.badge}
+                    </span>
+                  )}
                 </div>
                 <button 
                   type="button" 
@@ -77,27 +78,27 @@ export default function Projects() {
                     e.stopPropagation();
                     setSelectedProject(project);
                   }}
-                  aria-label={`View details for ${project.title}`}
+                  aria-label={`View architecture for ${project.title}`}
                 >
-                  <span>Details</span>
-                  <ArrowUpRight size={15} />
+                  <span>Architecture</span>
+                  <ArrowUpRight size={14} />
                 </button>
               </div>
 
-              {/* Title and Subtitle */}
+              {/* Title & Subtitle */}
               <div className="project-title-area">
                 <h3 className="project-name">{project.title}</h3>
                 <p className="project-sub">{project.subtitle}</p>
               </div>
 
-              {/* Summary */}
+              {/* Tagline / Summary */}
               <p className="project-tagline-text">
                 {project.tagline}
               </p>
 
-              {/* Highlights from Resume */}
+              {/* Highlights List */}
               <div className="project-highlights-container">
-                <span className="highlights-header">Key Achievements:</span>
+                <span className="highlights-header">Key Highlights & Features:</span>
                 <ul className="highlights-list">
                   {project.highlights.map((bullet, idx) => (
                     <li key={idx} className="highlight-point">
@@ -108,7 +109,7 @@ export default function Projects() {
                 </ul>
               </div>
 
-              {/* Tech Stack Chips & Footer */}
+              {/* Tech Stack Chips */}
               <div className="project-card-footer">
                 <div className="tech-chip-group">
                   {project.techStack.map((tech, idx) => (

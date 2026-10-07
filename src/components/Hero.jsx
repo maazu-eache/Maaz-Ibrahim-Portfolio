@@ -10,9 +10,8 @@ import {
   Code2, 
   Database, 
   ShieldCheck,
-  Building2,
-  CheckCircle2,
-  Terminal,
+  Smartphone,
+  Layers,
   Sparkles
 } from 'lucide-react';
 
@@ -29,20 +28,28 @@ export default function Hero({ onOpenResume }) {
     <section id="hero" className="hero-section">
       <div className="container">
         <div className="hero-grid">
-          {/* Left Column: Introduction & Primary Actions */}
+          {/* Left Column: Introduction & Primary Pitch */}
           <div className="hero-content">
             <div className="hero-status-row">
               <div className="status-badge-hero">
                 <span className="status-dot-pulse"></span>
-                <span>Available for Opportunities</span>
+                <span>Available for Hire & Projects</span>
               </div>
-              <span className="exp-badge">3+ Years Experience</span>
+              <span className="exp-badge">2+ Years Experience</span>
+              <span className="google-play-badge">
+                <span>Google Play Publisher</span>
+              </span>
             </div>
 
             <h1 className="hero-heading">
               Hi, I'm <span className="highlight-text">{personalData.name}</span>
               <span className="role-subheading">{personalData.role}</span>
             </h1>
+
+            {/* Short Hero Version Pitch */}
+            <p className="hero-short-pitch">
+              {personalData.shortHeroPitch}
+            </p>
 
             <p className="hero-bio">
               {personalData.bio}
@@ -51,20 +58,23 @@ export default function Hero({ onOpenResume }) {
             {/* Core Competency Highlights */}
             <div className="hero-tags-row">
               <span className="pill-tag">
-                <Code2 size={15} className="text-primary" /> React & React Native
+                <Code2 size={15} className="text-primary" /> MERN Stack & React.js
               </span>
               <span className="pill-tag">
-                <Database size={15} className="text-primary" /> Node.js & MongoDB
+                <Smartphone size={15} className="text-primary" /> React Native (iOS & Android)
               </span>
               <span className="pill-tag">
-                <ShieldCheck size={15} className="text-primary" /> JWT & RBAC Security
+                <Database size={15} className="text-primary" /> Node.js & MongoDB / MySQL
+              </span>
+              <span className="pill-tag">
+                <ShieldCheck size={15} className="text-primary" /> JWT, RBAC & Payments
               </span>
             </div>
 
             {/* Action Buttons */}
             <div className="hero-actions-row">
               <a href="#projects" className="btn btn-primary btn-lg" id="hero-view-projects">
-                <span>View Projects</span>
+                <span>View Featured Projects</span>
                 <ArrowRight size={17} />
               </a>
 
@@ -142,45 +152,47 @@ export default function Hero({ onOpenResume }) {
               {/* Quick Details List */}
               <div className="spec-details-list">
                 <div className="spec-detail-item">
-                  <span className="detail-key">Current Role</span>
+                  <span className="detail-key">Specialization</span>
                   <span className="detail-val">
-                    Full Stack Dev at <a href={personalData.company.url} target="_blank" rel="noopener noreferrer" className="link-inline">SAFPRO Tech</a>
+                    MERN Stack (MongoDB, Express, React, Node) & React Native
                   </span>
                 </div>
 
                 <div className="spec-detail-item">
-                  <span className="detail-key">Experience</span>
-                  <span className="detail-val">3+ Years Building Web & Mobile Apps</span>
+                  <span className="detail-key">Platforms Delivered</span>
+                  <span className="detail-val">Web, iOS, and Android (Google Play Published)</span>
                 </div>
 
                 <div className="spec-detail-item">
-                  <span className="detail-key">Primary Stack</span>
+                  <span className="detail-key">Core Capabilities</span>
                   <div className="detail-tags">
-                    <span className="tech-tag blue">React</span>
+                    <span className="tech-tag blue">React.js</span>
                     <span className="tech-tag blue">React Native</span>
                     <span className="tech-tag emerald">Node.js</span>
                     <span className="tech-tag emerald">MongoDB</span>
+                    <span className="tech-tag purple">REST APIs</span>
+                    <span className="tech-tag">RBAC</span>
                   </div>
                 </div>
 
                 <div className="spec-detail-item">
-                  <span className="detail-key">Security & Auth</span>
-                  <span className="detail-val">JWT, Role-Based Access Control (RBAC)</span>
+                  <span className="detail-key">Payments Integration</span>
+                  <span className="detail-val">Stripe, PayPal, Razorpay APIs</span>
                 </div>
 
                 <div className="spec-detail-item">
-                  <span className="detail-key">Payments</span>
-                  <span className="detail-val">PayPal & Stripe UI & Backend Integration</span>
+                  <span className="detail-key">Education</span>
+                  <span className="detail-val">B.Sc. Computer Science • Islamiah College</span>
                 </div>
               </div>
 
               {/* Code Standard Banner */}
               <div className="spec-footer-banner">
                 <div className="banner-icon">
-                  <Terminal size={16} />
+                  <Layers size={16} />
                 </div>
                 <div className="banner-text">
-                  <span>Component-Based Architecture • Responsive UI • Clean Code</span>
+                  <span>Clean Code • Intuitive UX • Production-Ready Engineering</span>
                 </div>
               </div>
             </div>
@@ -197,8 +209,8 @@ export default function Hero({ onOpenResume }) {
               </div>
             ))}
             <div className="stat-box pro-card company-stat">
-              <div className="stat-number comp-acronym">SAFPRO</div>
-              <div className="stat-title">Technology Solutions</div>
+              <div className="stat-number comp-acronym">MERN</div>
+              <div className="stat-title">Stack Specialist</div>
             </div>
           </div>
         </div>
