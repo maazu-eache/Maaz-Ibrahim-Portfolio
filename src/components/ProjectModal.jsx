@@ -1,15 +1,5 @@
 import React, { useEffect } from 'react';
-import { 
-  X, 
-  CheckCircle2, 
-  Clock, 
-  Layers, 
-  Server, 
-  Database, 
-  ShieldCheck, 
-  ArrowRight,
-  FolderGit2
-} from 'lucide-react';
+import { X, CheckCircle2, ArrowRight } from 'lucide-react';
 
 export default function ProjectModal({ project, onClose }) {
   useEffect(() => {
@@ -29,120 +19,86 @@ export default function ProjectModal({ project, onClose }) {
   return (
     <div className="modal-backdrop" onClick={onClose}>
       <div 
-        className="modal-container pro-card" 
+        className="modal-box" 
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Modal Top Header */}
-        <div className="modal-header">
-          <div className="modal-header-info">
-            <div className="modal-badge-row">
-              <span className="modal-cat-tag">{project.category}</span>
-              <span className="modal-duration-tag">
-                <Clock size={13} /> {project.duration}
-              </span>
+        <div className="modal-header-bar">
+          <div>
+            <div className="modal-badge-group">
+              <span className="tag-pill yellow">{project.category}</span>
+              {project.badge && <span className="tag-pill">{project.badge}</span>}
             </div>
-            <h3 className="modal-title">{project.title}</h3>
-            <p className="modal-subtitle">{project.subtitle}</p>
+            <h3 className="modal-heading">{project.title}</h3>
+            <p className="modal-subheading">{project.subtitle}</p>
           </div>
 
           <button 
             type="button" 
-            className="modal-close-button" 
+            className="modal-close" 
             onClick={onClose}
-            aria-label="Close project modal"
+            aria-label="Close modal"
           >
-            <X size={20} />
+            <X size={18} />
           </button>
         </div>
 
-        {/* Modal Content Scroll Area */}
-        <div className="modal-body">
-          {/* Quick Metrics */}
-          <div className="modal-metrics-bar">
-            {project.metrics.map((m, idx) => (
-              <div key={idx} className="metric-cell">
-                <span className="cell-label">{m.label}</span>
-                <span className="cell-val">{m.value}</span>
-              </div>
-            ))}
+        <div className="modal-content-area">
+          <div className="modal-section-unit">
+            <h4 className="modal-unit-title">Overview</h4>
+            <p className="modal-unit-desc">{project.tagline}</p>
           </div>
 
-          {/* Project Summary */}
-          <div className="modal-block">
-            <h4 className="modal-block-title">Project Overview</h4>
-            <p className="modal-block-text">{project.tagline}</p>
-          </div>
-
-          {/* Resume Highlights & Contributions */}
-          <div className="modal-block">
-            <h4 className="modal-block-title">Key Contributions & Features Implemented:</h4>
-            <ul className="modal-bullet-list">
+          <div className="modal-section-unit">
+            <h4 className="modal-unit-title">Key Contributions</h4>
+            <ul className="modal-list">
               {project.highlights.map((bullet, idx) => (
-                <li key={idx} className="modal-bullet-item">
-                  <CheckCircle2 size={16} className="bullet-check text-primary" />
+                <li key={idx} className="modal-list-item">
+                  <CheckCircle2 size={15} className="item-check" />
                   <span>{bullet}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Architectural Breakdown */}
-          <div className="modal-block">
-            <h4 className="modal-block-title">System Architecture:</h4>
-            <div className="arch-layout">
-              <div className="arch-box">
-                <div className="arch-box-head">
-                  <Layers size={16} className="text-primary" />
-                  <span>Frontend Architecture</span>
-                </div>
+          <div className="modal-section-unit">
+            <h4 className="modal-unit-title">Architecture & System</h4>
+            <div className="modal-arch-grid">
+              <div className="arch-card">
+                <span className="arch-label">Frontend & Mobile</span>
                 <p>{project.architecture.frontend}</p>
               </div>
-
-              <div className="arch-box">
-                <div className="arch-box-head">
-                  <Server size={16} className="text-primary" />
-                  <span>Backend & APIs</span>
-                </div>
+              <div className="arch-card">
+                <span className="arch-label">Backend & APIs</span>
                 <p>{project.architecture.backend}</p>
               </div>
-
-              <div className="arch-box">
-                <div className="arch-box-head">
-                  <Database size={16} className="text-emerald" />
-                  <span>Database Layer</span>
-                </div>
+              <div className="arch-card">
+                <span className="arch-label">Database</span>
                 <p>{project.architecture.database}</p>
               </div>
-
-              <div className="arch-box">
-                <div className="arch-box-head">
-                  <ShieldCheck size={16} className="text-purple" />
-                  <span>Security & Logic</span>
-                </div>
+              <div className="arch-card">
+                <span className="arch-label">Security & Logic</span>
                 <p>{project.architecture.security || project.architecture.performance}</p>
               </div>
             </div>
           </div>
 
-          {/* Tech Stack */}
-          <div className="modal-block">
-            <h4 className="modal-block-title">Technologies & Tools:</h4>
-            <div className="modal-tags-wrap">
+          <div className="modal-section-unit">
+            <h4 className="modal-unit-title">Tech Stack</h4>
+            <div className="modal-tags">
               {project.techStack.map((tech, idx) => (
-                <span key={idx} className="tech-tag blue">{tech}</span>
+                <span key={idx} className="tag-pill">{tech}</span>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Modal Footer */}
-        <div className="modal-footer">
-          <button type="button" className="btn btn-secondary" onClick={onClose}>
+        <div className="modal-footer-bar">
+          <button type="button" className="btn btn-outline btn-sm" onClick={onClose}>
             Close
           </button>
-          <a href="#contact" className="btn btn-primary" onClick={onClose}>
-            <span>Discuss Project</span>
-            <ArrowRight size={16} />
+          <a href="#contact" className="btn btn-black btn-sm" onClick={onClose}>
+            <span>Get In Touch</span>
+            <ArrowRight size={14} />
           </a>
         </div>
       </div>

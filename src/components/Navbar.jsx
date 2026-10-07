@@ -1,67 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { personalData } from '../data/portfolioData';
-import { FileText, Menu, X } from 'lucide-react';
+import { FileText, Menu, X, ArrowUpRight } from 'lucide-react';
 
 export default function Navbar({ onOpenResume }) {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 15);
-
-      const sections = ['hero', 'about', 'projects', 'skills', 'experience', 'contact'];
-      const scrollPosition = window.scrollY + 100;
-
-      for (const section of sections) {
-        const el = document.getElementById(section);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const navLinks = [
-    { label: 'About', href: '#about', id: 'about' },
-    { label: 'Projects', href: '#projects', id: 'projects' },
-    { label: 'Expertise', href: '#skills', id: 'skills' },
-    { label: 'Experience', href: '#experience', id: 'experience' },
-    { label: 'Contact', href: '#contact', id: 'contact' },
+    { label: 'About', href: '#about' },
+    { label: 'Projects', href: '#projects' },
+    { label: 'Skills', href: '#skills' },
+    { label: 'Contact', href: '#contact' },
   ];
 
   return (
-    <header className={`navbar-header-clean ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="container navbar-inner">
-        {/* Brand / Logo */}
-        <a href="#hero" className="navbar-logo" onClick={() => setMobileMenuOpen(false)}>
-          <div className="logo-badge-clean">
-            <span>MI</span>
-          </div>
-          <div className="logo-text-group">
-            <span className="logo-name">{personalData.name}</span>
-            <span className="logo-sub">{personalData.role}</span>
-          </div>
+    <header className="site-header">
+      <div className="container header-inner">
+        {/* Brand */}
+        <a href="#hero" className="brand-link">
+          <div className="brand-initials">MI</div>
+          <span className="brand-name">{personalData.name}</span>
         </a>
 
         {/* Desktop Nav */}
-        <nav className="navbar-nav-desktop">
-          <ul className="navbar-link-list">
+        <nav className="desktop-nav">
+          <ul className="nav-links">
             {navLinks.map((link) => (
-              <li key={link.id}>
-                <a
-                  href={link.href}
-                  className={`nav-link-item ${activeSection === link.id ? 'active' : ''}`}
-                >
+              <li key={link.label}>
+                <a href={link.href} className="nav-item">
                   {link.label}
                 </a>
               </li>
@@ -69,65 +34,59 @@ export default function Navbar({ onOpenResume }) {
           </ul>
         </nav>
 
-        {/* Actions */}
-        <div className="navbar-end-actions">
-          <div className="nav-avail-tag">
-            <span className="avail-dot-mini"></span>
-            <span>Available for Hire</span>
+        {/* Action & Status */}
+        <div className="header-actions">
+          <div className="avail-badge">
+            <span className="avail-dot"></span>
+            <span>Available</span>
           </div>
 
           <button 
             type="button" 
-            className="btn btn-primary btn-sm"
+            className="btn btn-yellow btn-sm"
             onClick={onOpenResume}
-            id="nav-resume-btn"
           >
-            <FileText size={15} />
+            <FileText size={14} />
             <span>Resume</span>
           </button>
         </div>
 
-        {/* Mobile Toggle */}
+        {/* Mobile Hamburger */}
         <button
           type="button"
-          className="mobile-hamburger-btn"
-          aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="mobile-btn"
+          aria-label="Toggle navigation"
+          onClick={() => setMobileOpen(!mobileOpen)}
         >
-          {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
       {/* Mobile Drawer */}
-      {mobileMenuOpen && (
-        <div className="mobile-menu-drawer">
-          <div className="mobile-menu-inner">
-            <ul className="mobile-links-list">
-              {navLinks.map((link) => (
-                <li key={link.id}>
-                  <a
-                    href={link.href}
-                    className={`mobile-link-entry ${activeSection === link.id ? 'active' : ''}`}
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <div className="mobile-drawer-bottom">
-              <button 
-                type="button" 
-                className="btn btn-primary w-full"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenResume();
-                }}
+      {mobileOpen && (
+        <div className="mobile-menu">
+          <div className="container mobile-menu-content">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="mobile-item"
+                onClick={() => setMobileOpen(false)}
               >
-                <FileText size={16} />
-                <span>View & Download Resume</span>
-              </button>
-            </div>
+                {link.label}
+              </a>
+            ))}
+            <button
+              type="button"
+              className="btn btn-yellow w-full mt-2"
+              onClick={() => {
+                setMobileOpen(false);
+                onOpenResume();
+              }}
+            >
+              <FileText size={15} />
+              <span>View Resume</span>
+            </button>
           </div>
         </div>
       )}
