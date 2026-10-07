@@ -76,8 +76,10 @@ export default function ProjectModal({ project, onClose }) {
                 <p>{project.architecture.database}</p>
               </div>
               <div className="arch-card">
-                <span className="arch-label">Security & Logic</span>
-                <p>{project.architecture.security || project.architecture.performance}</p>
+                <span className="arch-label">
+                  {project.architecture.security ? 'Security & Logic' : (project.architecture.performance ? 'Performance & Logic' : 'Deployment & Release')}
+                </span>
+                <p>{project.architecture.security || project.architecture.performance || project.architecture.deployment}</p>
               </div>
             </div>
           </div>

@@ -201,6 +201,7 @@ export const projectsData = [
       frontend: "High-performance React Native mobile architecture with smooth screen transitions, tournament trees, and live scoreboards.",
       backend: "Node.js & Express RESTful services orchestrating real-time score updates, slot bookings, and team rosters.",
       database: "Optimized database layer handling tournament fixtures, player career metrics, and turf scheduling.",
+      security: "Secure JWT user authentication, role-based permissions for turf managers vs. players, real-time match state validation, and conflict-free slot booking logic.",
       deployment: "Production release on Google Play Store adhering to Android guidelines, app signing, and release pipelines."
     },
     metrics: [
