@@ -42,7 +42,7 @@ export default function ResumeModal({ onClose }) {
 
           <div className="resume-control-actions">
             <a 
-              href="/Maaz_Resume.pdf" 
+              href="/Resume.pdf" 
               download="Maaz_Ibrahim_Resume.pdf"
               className="btn btn-primary btn-sm"
               id="resume-modal-download-btn"
@@ -94,18 +94,18 @@ export default function ResumeModal({ onClose }) {
           {viewMode === 'pdf' ? (
             <div className="pdf-viewer-frame">
               <object 
-                data="/Maaz_Resume.pdf" 
+                data="/Resume.pdf" 
                 type="application/pdf" 
                 className="pdf-render-object"
               >
                 <div className="pdf-fallback-box">
                   <p>Your browser doesn't have an inline PDF reader.</p>
                   <a 
-                    href="/Maaz_Resume.pdf" 
+                    href="/Resume.pdf" 
                     download="Maaz_Ibrahim_Resume.pdf"
                     className="btn btn-primary btn-sm mt-3"
                   >
-                    <Download size={15} /> Download Maaz_Resume.pdf
+                    <Download size={15} /> Download Maaz_Ibrahim_Resume.pdf
                   </a>
                 </div>
               </object>

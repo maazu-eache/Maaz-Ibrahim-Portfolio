@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { personalData } from '../data/portfolioData';
-import { Mail, Copy, Check, ExternalLink, Download, MapPin, Building2 } from 'lucide-react';
+import { Mail, Copy, Check, ExternalLink, Download, MapPin, Building2, Phone } from 'lucide-react';
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
@@ -46,7 +46,20 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Company Row */}
+            {/* Phone Row */}
+            <div className="contact-row-item">
+              <div className="contact-icon-box">
+                <Phone size={20} />
+              </div>
+              <div className="contact-row-content">
+                <span className="contact-row-label">Phone / WhatsApp</span>
+                <a href={`tel:${personalData.phone.replace(/\s+/g, '')}`} className="contact-comp-link">
+                  {personalData.phone}
+                </a>
+              </div>
+            </div>
+
+            {/* Current Company Row */}
             <div className="contact-row-item">
               <div className="contact-icon-box">
                 <Building2 size={20} />

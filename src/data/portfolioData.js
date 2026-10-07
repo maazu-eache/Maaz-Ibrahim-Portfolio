@@ -16,8 +16,9 @@ export const personalData = {
     "I focus on writing clean, maintainable code, creating intuitive user experiences, solving complex technical issues, and delivering reliable applications that are ready for real-world use."
   ],
   email: "maazibrahimoo0@gmail.com",
+  phone: "+91 8428676150",
   location: "India / Remote",
-  resumeUrl: "/Maaz_Resume.pdf",
+  resumeUrl: "/Resume.pdf",
   stats: [
     { label: "Years Experience", value: "2+", icon: "Briefcase" },
     { label: "Featured Projects", value: "5", icon: "Layers" },
