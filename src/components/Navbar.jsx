@@ -17,7 +17,7 @@ export default function Navbar({ onOpenResume }) {
       <div className="container header-inner">
         {/* Brand */}
         <a href="#hero" className="brand-link">
-          <div className="brand-initials">MI</div>
+          <img src="/MI.png" alt="Maaz Ibrahim" className="brand-logo-img" />
           <span className="brand-name">{personalData.name}</span>
         </a>
 

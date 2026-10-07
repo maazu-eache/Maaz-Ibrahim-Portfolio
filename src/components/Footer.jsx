@@ -11,6 +11,7 @@ export default function Footer({ onOpenResume }) {
     <footer className="site-footer">
       <div className="container footer-content">
         <div className="footer-left">
+          <img src="/MI.png" alt="MI" className="footer-logo-img" />
           <span className="footer-name">{personalData.name}</span>
           <span className="footer-sep">•</span>
           <span className="footer-role">{personalData.role}</span>

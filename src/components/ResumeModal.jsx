@@ -114,9 +114,12 @@ export default function ResumeModal({ onClose }) {
             <div className="clean-resume-document">
               {/* Header */}
               <div className="doc-header">
-                <div>
-                  <h1 className="doc-name">{personalData.name}</h1>
-                  <h2 className="doc-title">{personalData.role}</h2>
+                <div className="doc-brand-title-wrap">
+                  <img src="/MI.png" alt="MI" className="resume-doc-logo" />
+                  <div>
+                    <h1 className="doc-name">{personalData.name}</h1>
+                    <h2 className="doc-title">{personalData.role}</h2>
+                  </div>
                 </div>
 
                 <div className="doc-company-box">
